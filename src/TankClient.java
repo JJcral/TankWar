@@ -10,7 +10,15 @@ import java.awt.event.WindowEvent;
 public class TankClient extends Frame {
 
 
-    private void createFrame(){
+    @Override
+    public void paint(Graphics graphics){
+        Color color = graphics.getColor();
+        graphics.setColor(Color.red);
+        graphics.fillOval(50,50,30,30);
+        graphics.setColor(color);
+    }
+
+    public void createFrame(){
         this.setLocation(400,300);
         this.setSize(800,600);
 
@@ -23,6 +31,7 @@ public class TankClient extends Frame {
         });
 
         this.setResizable(false);
+        this.setBackground(Color.gray);
         setVisible(true);
     }
 
